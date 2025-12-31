@@ -49,18 +49,27 @@ function showPreview() {
     // ลิงก์ไปเว็บตัวอย่าง
     window.open("https://mrwayooo.github.io/Template1/", "_blank");
 }
+// ดึง Element ที่จำเป็น
+const buyButton = document.querySelector('.Buy');
+const authModal = document.getElementById("authModal");
 
-function handleBuy() {
-    if(!sessionStorage.getItem("isLogged")) {
-        alert("กรุณา Login ก่อนสั่งซื้อ");
-        modal.style.display = "flex";
-    } else {
-        // ลิงก์ไปหน้าสั่งซื้อจริง
-        window.location.href = "Checkout.html";
-    }
+if (buyButton) {
+    buyButton.addEventListener('click', function() {
+        // ตรวจสอบว่ามีข้อมูลการ Login ใน sessionStorage หรือไม่
+        const isLoggedIn = sessionStorage.getItem("isLogged");
+
+        if (isLoggedIn === "true") {
+            // ถ้า Login แล้ว -> ไปหน้าชำระเงิน
+            window.location.href = 'Checkout.html';
+        } else {
+            // ถ้ายังไม่ได้ Login -> แจ้งเตือนและเปิดหน้าต่าง Login/Sign In
+            alert("กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อครับ");
+            if (authModal) {
+                authModal.style.display = "flex";
+            }
+        }
+    });
 }
-
-
 // เช็คสถานะเมื่อโหลดหน้า
 window.onload = () => {
     const user = sessionStorage.getItem("currentUser");
@@ -68,4 +77,5 @@ window.onload = () => {
         authBtn.innerText = "Logout (" + user + ")";
         authBtn.onclick = () => { sessionStorage.clear(); location.reload(); }
     }
+
 }

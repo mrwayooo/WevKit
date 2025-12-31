@@ -69,4 +69,3 @@ window.onload = () => {
         authBtn.onclick = () => { sessionStorage.clear(); location.reload(); }
     }
 }
-

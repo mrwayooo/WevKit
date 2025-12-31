@@ -49,15 +49,17 @@ function showPreview() {
     // ลิงก์ไปเว็บตัวอย่าง
     window.open("https://mrwayooo.github.io/Template1/", "_blank");
 }
-// ดึง Element ปุ่ม Buy จากหน้า index.html
-const buyButton = document.querySelector('.Buy');
 
-if (buyButton) {
-    buyButton.addEventListener('click', function() {
-        // เปลี่ยนหน้าไปยัง Checkout.html
-        window.location.href = 'Checkout.html';
-    });
+function handleBuy() {
+    if(!sessionStorage.getItem("isLogged")) {
+        alert("กรุณา Login ก่อนสั่งซื้อ");
+        modal.style.display = "flex";
+    } else {
+        // ลิงก์ไปหน้าสั่งซื้อจริง
+        window.location.href = "Checkout.html";
+    }
 }
+
 
 // เช็คสถานะเมื่อโหลดหน้า
 window.onload = () => {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WevKit - Template 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 class="top-title">WevKit</h1>
+        <button id="authBtn" class="auth-trigger">Login / Sign In</button>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="card-container">
+            <h2 class="main-h1">Starter Template</h2>
+            
+            <div class="image-box">
+                <img src="Template1.png" alt="Main Image">
+            </div>
+
+            <h3 class="sub-h2">เทมเพลตสำหรับมือใหม่</h3>
+            <p>รายละเอียดอื่น ๆ: แก้ข้อความ ใส่รูป แล้วใช้งานได้ทันที ไม่ต้องเขียนโค้ด</p>
+            
+            <div class="actions">
+                <button class="Showcase" onclick="showPreview()">ดูตัวอย่าง</button>
+                <button class="Buy" onclick="handleBuy()">ซื้อเทมเพลต</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            
+            <div id="loginBox">
+                <h2>เข้าสู่ระบบ</h2>
+                <form id="loginForm">
+                    <input type="text" id="loginUser" placeholder="ชื่อผู้ใช้" required>
+                    <input type="password" id="loginPass" placeholder="รหัสผ่าน" required>
+                    <button type="submit" class="btn-submit">ตกลง</button>
+                </form>
+                <p>ยังไม่มีบัญชี? <a href="#" id="toSignup">สมัครสมาชิก</a></p>
+            </div>
+
+            <div id="signupBox" style="display:none;">
+                <h2>สมัครสมาชิก</h2>
+                <form id="signupForm">
+                    <input type="text" id="regUser" placeholder="ชื่อผู้ใช้" required>
+                    <input type="email" placeholder="อีเมล" required>
+                    <input type="password" id="regPass" placeholder="รหัสผ่าน" required>
+                    <button type="submit" class="btn-submit" style="background:#4f46e5;">สมัคร</button>
+                </form>
+                <p>มีบัญชีแล้ว? <a href="#" id="toLogin">เข้าสู่ระบบ</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

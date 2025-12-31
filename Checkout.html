@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน - WevKit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* สไตล์เพิ่มเติมเฉพาะหน้า Checkout */
+        .checkout-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 30px;
+        }
+
+        .checkout-card {
+            background-color: white;
+            color: #0f172a;
+            padding: 25px;
+            border-radius: 16px;
+            flex: 1;
+        }
+
+        .checkout-card h2 {
+            margin-top: 0;
+            color: #0f172a;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WevKit</h1>
+
+    <div class="checkout-container">
+        <div class="checkout-card">
+            <h2>สรุปคำสั่งซื้อ</h2>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <span>Starter Template</span>
+                <span>฿990.00</span>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 20px;">
+                <span>ยอดรวมทั้งหมด</span>
+                <span style="color: #22c55e;">฿990.00</span>
+            </div>
+        </div>
+
+        <div class="checkout-card">
+            <h2>ข้อมูลการชำระเงิน</h2>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label>ชื่อบนบัตร</label>
+                    <input type="text" placeholder="ชื่อ - นามสกุล" required>
+                </div>
+                <div class="input-group">
+                    <label>หมายเลขบัตร</label>
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" required>
+                </div>
+                <button type="submit" class="Buy" style="width: 100%; margin-left: 0;">ยืนยันการชำระเงิน</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
